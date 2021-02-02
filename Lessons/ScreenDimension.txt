@@ -1,0 +1,54 @@
+
+
+################################App.json - Var orentaion = default
+
+
+import React from 'react';
+import {useDimensions, useDeviceOrientation} from '@react-native-community/hooks'
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TouchableNativeFeedback, 
+  TouchableHighlight, 
+  Image, 
+  SafeAreaView, 
+  Button,
+  Alert,
+  Platform,
+  StatusBar,
+  Dimensions
+} from 'react-native';
+
+export default function App() {
+
+  const handlePress = () => console.log("Text pressed");
+  console.log(Dimensions.get("screen"));
+  console.log(useDimensions(), useDeviceOrientation());
+  const {landscape} = useDeviceOrientation();
+  //console.log('App Executed')
+  //Static Image from local: <Image source={require('./assets/favicon.png')}/>
+
+  return (    
+    <SafeAreaView style={[styles.container, containerStyle]}>
+      <View style={{
+        backgroundColor: '#fff',
+        width: '100%',
+        height: landscape ? '100%' : '10%',
+        alignItems: 'center'
+      }}
+      ></View>
+      <Button color="orange" title="Click Me" onPress={() => handlePress()}/>
+    </SafeAreaView>
+  );
+}
+
+const containerStyle = {backgroundColor: "orange"};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+});

@@ -1,0 +1,43 @@
+import React from 'react';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TouchableNativeFeedback, 
+  TouchableHighlight, 
+  Image, 
+  SafeAreaView, 
+  Button,
+  Alert,
+  Platform,
+  StatusBar
+} from 'react-native';
+
+export default function App() {
+
+  const handlePress = (String) => console.log("Text pressed");
+  var visible = false;
+  const changeVisibilityStatusbar = () => {
+    handlePress(); visible = !visible;
+    StatusBar.setHidden(!visible);
+  }
+
+  //console.log('App Executed')
+  //Static Image from local: <Image source={require('./assets/favicon.png')}/>
+
+  return (    
+    <SafeAreaView style={[styles.container, containerStyle]}>
+      <Button color="orange" title="Click Me" onPress={() => changeVisibilityStatusbar()}/>
+    </SafeAreaView>
+  );
+}
+
+const containerStyle = {backgroundColor: "orange"};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+});

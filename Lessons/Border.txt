@@ -1,0 +1,39 @@
+import React from "react";
+import { StyleSheet, View, SafeAreaView, StatusBar } from "react-native";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.blueView}></View>
+      <View style={styles.redView}></View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  blueView: {
+    backgroundColor: "dodgerblue",
+    width: 100,
+    height: 100,
+    borderWidth: 10,
+    borderColor: "royalblue",
+    borderRadius: 50,
+  },
+  redView: {
+    backgroundColor: "tomato",
+    width: 100,
+    height: 100,
+    borderWidth: 10,
+    borderColor: "gold",
+    borderRadius: 10,
+    borderTopLeftRadius: 50,
+    borderBottomRightRadius: 50,
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
