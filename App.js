@@ -11,13 +11,25 @@ import MyAccountScreen from "./app/screens/MyAccountScreen";
 import AppText from "./app/components/AppText";
 import AppButton from "./app/components/AppButton";
 import Card from "./app/components/Card";
+import Icon from "./app/components/Icon";
+import Screen from "./app/components/Screen";
 
 //Config
 import colors from "./app/config/colors";
 import MessagesScreen from "./app/screens/MessagesScreen";
+import ListItem from "./app/components/ListItem";
 
 export default function App() {
-  return <MyAccountScreen></MyAccountScreen>;
+  return (
+    <Screen>
+      <ListItem
+        title="My Listing"
+        ImageContent={
+          <Icon name="email" backgroundColor={colors.primary}></Icon>
+        }
+      ></ListItem>
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({

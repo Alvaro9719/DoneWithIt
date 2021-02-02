@@ -11,8 +11,7 @@ const styles = StyleSheet.create({
     fontFamily: "sans-serif",
     color: "black",
     fontStyle: "normal",
-    fontWeight: "500",
-    textTransform: "uppercase",
+    fontWeight: "900",
     textAlign: "auto",
   },
 });

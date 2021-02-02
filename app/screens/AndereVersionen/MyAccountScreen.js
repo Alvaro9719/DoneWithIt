@@ -5,10 +5,10 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 //Components
 import Screen from "../components/Screen";
 import AppText from "../components/AppText";
+import AccListComponent from "../components/AccListComponent";
 
 //Config
 import colors from "../config/colors";
-import ListItem from "../components/ListItem";
 
 const accInfo = {
   name: "Mosh Hamedani",
@@ -18,7 +18,32 @@ const accInfo = {
 function MyAccountScreen({ require }) {
   return (
     <Screen style={{ backgroundColor: colors.ligth }}>
-      <ListItem></ListItem>
+      <View>
+        <View style={styles.personContainer}>
+          <Image source={require} style={styles.image} />
+          <View style={styles.text}>
+            <AppText style={styles.name}>{accInfo.name}</AppText>
+            <AppText style={styles.email}>{accInfo.email}</AppText>
+          </View>
+        </View>
+        <AccListComponent
+          children={"My Listing"}
+          styleView={{ backgroundColor: colors.primary }}
+          iconName={"format-list-bulleted"}
+        ></AccListComponent>
+        <AccListComponent
+          children={"My Messages"}
+          styleView={{ backgroundColor: colors.secondary }}
+          iconName={"email"}
+        ></AccListComponent>
+        <View style={styles.logout}>
+          <AccListComponent
+            children={"Log Out"}
+            styleView={{ backgroundColor: colors.yellow }}
+            iconName={"logout"}
+          ></AccListComponent>
+        </View>
+      </View>
     </Screen>
   );
 }
