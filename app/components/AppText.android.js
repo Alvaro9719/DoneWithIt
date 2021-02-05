@@ -1,19 +1,11 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text } from "react-native";
+
+//Config
+import defaultStyles from "../config/styles";
 
 function AppText({ children, style }) {
-  return <Text style={[styles.text, style]}>{children}</Text>;
+  return <Text style={[defaultStyles.text, style]}>{children}</Text>;
 }
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 15,
-    fontFamily: "sans-serif",
-    color: "black",
-    fontStyle: "normal",
-    fontWeight: "900",
-    textAlign: "auto",
-  },
-});
 
 export default AppText;

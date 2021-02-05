@@ -6,7 +6,7 @@ import colors from "../config/colors";
 
 //Components
 import AppText from "../components/AppText";
-import ListItem from "../components/ListItem";
+import ListItem from "../components/lists/ListItem";
 
 function ListingDetailsScreen(props) {
   return (

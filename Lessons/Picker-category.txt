@@ -26,12 +26,9 @@ import Screen from "./app/components/Screen";
 //Config
 import colors from "./app/config/colors";
 import MessagesScreen from "./app/screens/MessagesScreen";
-import ListItem from "./app/components/lists/ListItem";
+import ListItem from "./app/components/ListItem";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
-import LoginScreen from "./app/screens/LoginScreen";
-import RegisterScreen from "./app/screens/RegisterScreen";
-import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -43,9 +40,19 @@ export default function App() {
   const [isNew, setIsNew] = useState(false);
   const [selectedValue, setSelectedValue] = useState("java");
   const [category, setCategory] = useState("");
-  const [email, setEmail] = useState();
 
-  return <ListingEditScreen></ListingEditScreen>;
+  return (
+    <Screen style={styles.container}>
+      <AppPicker
+        selectedItem={category}
+        onSelect Item={(item) => setCategory(item)}
+        items={categories}
+        placeholder="Category"
+        icon="apps"
+      ></AppPicker>
+      <AppTextInput placeholder="Hello" icon="email"></AppTextInput>
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
